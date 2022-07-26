@@ -1,0 +1,74 @@
+﻿@model IEnumerable<LinqTransportes.Models.Trabajador>
+
+<p>
+    @Html.ActionLink(" ", "Create", null, new { @class = "bi bi-person-plus btn btn-success" })
+</p>
+<table class="table table-striped" style="font-size:1rem">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Nombres)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.APaterno)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AMaterno)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Rut)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Telefono)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Email)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Direccion)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Fecha)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Puesto.Nombre)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Nombres)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.APaterno)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AMaterno)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Rut)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Telefono)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Email)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Direccion)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Fecha)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Puesto.Nombre)
+        </td>
+        <td>
+            @Html.ActionLink(" ", "Edit", new { id = item.ID }, new { @class = "bi bi-pencil btn btn-primary btn-sm" })
+            @Html.ActionLink(" ", "Delete", new { id = item.ID }, new { @class = "bi bi-person-x btn btn-danger btn-sm" })
+        </td>
+    </tr>
+}
+
+</table>
